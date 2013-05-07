@@ -5,12 +5,7 @@
   </head>
 
   <body>
-    {% for greeting in greetings %}
-      {% if greeting.author %}
-        <b>{{ greeting.author }}</b> wrote:
-      {% else %}
-        An anonymous person wrote:
-      {% endif %}
+    {% for i in images %}
       <blockquote>{{ greeting.content|escape }}</blockquote>
     {% endfor %}
 
@@ -20,6 +15,9 @@
     </form>
 
     <a href="{{ url }}">{{ url_linktext }}</a>
+
+<li><img src="/serve/%s' % str(b.key()) + '">' + str(b.filename) + '</a>
+
 
   </body>
 </html>
