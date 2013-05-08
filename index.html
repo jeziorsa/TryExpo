@@ -5,19 +5,12 @@
   </head>
 
   <body>
-    {% for i in images %}
-      <blockquote>{{ greeting.content|escape }}</blockquote>
+
+    {% for image in images %}
+      <li><img src="/serve/{{ image.key() }} "> {{ image.filename }}</a>
     {% endfor %}
 
-    <form action="/sign" method="post">
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Sign Guestbook"></div>
-    </form>
-
-    <a href="{{ url }}">{{ url_linktext }}</a>
-
-<li><img src="/serve/%s' % str(b.key()) + '">' + str(b.filename) + '</a>
-
+    {{ images }}
 
   </body>
 </html>

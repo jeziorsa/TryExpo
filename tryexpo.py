@@ -38,15 +38,13 @@ class MainHandler(webapp.RequestHandler):
         # self.response.out.write('<form action="%s" method="POST" enctype="multipart/form-data">' % upload_url)
         # self.response.out.write("""Upload File: <input type="file" name="file"><br> <input type="submit" name="submit" value="Submit"> </form></body></html>""")
         images_list = blobstore.BlobInfo.all()
-
-
+        
         template_values = {
             'images': images_list,
         }
 
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
-
 
         # for b in blobstore.BlobInfo.all():
         #     self.response.out.write('<li><img src="/serve/%s' % str(b.key()) + '">' + str(b.filename) + '</a>')
